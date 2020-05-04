@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小薛薛</title>
+  
+  <subtitle>好事，总在下一个转弯</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-05-03T16:51:21.818Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>小汤圆</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>The light of hope</title>
+    <link href="http://yoursite.com/2020/03/26/The%20light%20of%20hope/"/>
+    <id>http://yoursite.com/2020/03/26/The%20light%20of%20hope/</id>
+    <published>2020-03-26T01:36:13.000Z</published>
+    <updated>2020-05-03T16:51:21.818Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><pre><code class="java">Where there<span class="string">'s a will, there'</span>s a way</code></pre></li></ul><p><img src="/picture/xty.jpg" alt=""></p><p><img src="/picture/582aabf9870f2%5B1%5D.jpg" alt="582aabf9870f2[1]"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;Where there&lt;span class=&quot;string&quot;&gt;&#39;s a will, there&#39;&lt;/span&gt;s a way&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/pict
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Next主题</title>
+    <link href="http://yoursite.com/2020/03/25/Next%E4%B8%BB%E9%A2%98/"/>
+    <id>http://yoursite.com/2020/03/25/Next%E4%B8%BB%E9%A2%98/</id>
+    <published>2020-03-25T15:46:58.000Z</published>
+    <updated>2020-05-04T08:05:05.119Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>功夫不负有心人<del>*</del></p><p>Hexo 博客搭建完成之后，是选择next主题时遇到的一些问题以及解决方法</p><a id="more"></a><h2 id="一、Next主题的安装配置"><a href="#一、Next主题的安装配置" class="headerlink" title="一、Next主题的安装配置"></a>一、Next主题的安装配置</h2><p>在博客主目录下执行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure><p>然后设置站点配置文件_config.yml：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure><p>注：当时用这个方法的时候，总是不对出现以下错误</p><p><img src="/picture/1.jpg" alt="1"></p><p>然后去百度寻求解决方法，方法如下：</p><p>1、查看当前配置命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure><p>2、httpBuffer加大  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000</span><br></pre></td></tr></table></figure><p>3、压缩配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.compression -1</span><br></pre></td></tr></table></figure><p>4、修改配置文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export GIT_TRACE_PACKET&#x3D;1export</span><br></pre></td></tr></table></figure><p>参考链接：<a href="https://blog.csdn.net/qq_34121797/java/article/details/79561110" target="_blank" rel="noopener">https://blog.csdn.net/qq_34121797/java/article/details/79561110</a></p><h5 id="另一种next主题安装方法"><a href="#另一种next主题安装方法" class="headerlink" title="另一种next主题安装方法"></a>另一种next主题安装方法</h5><p>去官网下载稳定版本</p><p><img src="/picture/2.png" alt="2"></p><p><img src="/picture/3.png" alt="3"></p><p><img src="/picture/4.png" alt="4"></p><p><img src="/picture/5.png" alt="5"></p><p><img src="/picture/6.png" alt="6"></p><p>以上方法经本人验证推荐使用</p><h5 id="Next主题风格："><a href="#Next主题风格：" class="headerlink" title="Next主题风格："></a>Next主题风格：</h5><p>Next提供了四中主题风格scheme，可以在主题配置文件blog/themes/next/_config.yml文件中进行选择，分别是Muse、Mist、Pisces、Gemini</p><h2 id="二、鼠标点击特效"><a href="#二、鼠标点击特效" class="headerlink" title="二、鼠标点击特效"></a>二、鼠标点击特效</h2><p>具体步骤如下：在<code>/themes/next/source/js/src</code>下新建文件 clicklove.js ，接着把下面的代码拷贝粘贴到 clicklove.js 文件中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uestAnimationFrame||e.msRequestAnimationFrame||function(e)&#123;setTimeout(e,1e3&#x2F;60)&#125;&#125;(),n()&#125;(window,document);</span><br></pre></td></tr></table></figure><p>在<code>\themes\next\layout\_layout.swig</code>文件末尾添加：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;&#x2F;js&#x2F;src&#x2F;clicklove.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure><h2 id="三、添加动态背景"><a href="#三、添加动态背景" class="headerlink" title="三、添加动态背景"></a>三、添加动态背景</h2><p>在主题配置文件中找到<strong>canvas_nest: false</strong>，修改为<strong>canvas_nest: true</strong>即可。</p><h2 id="四、加入网易云音乐"><a href="#四、加入网易云音乐" class="headerlink" title="四、加入网易云音乐"></a>四、加入网易云音乐</h2><p>首先在网页搜索网易云音乐，选择音乐，并生成外链：</p><p><img src="/picture/7.png" alt="7"></p><p>然后得到外链html代码：</p><p><img src="/picture/8.png" alt="8"></p><p>将代码粘贴到一个合适的位置，建议放在侧边栏，在<code>Blog/themes/next/layout/_macro/sidebar.swig</code>文件下，选择位置复制进去，不同位置效果不同</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;功夫不负有心人&lt;del&gt;*&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;Hexo 博客搭建完成之后，是选择next主题时遇到的一些问题以及解决方法&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/03/25/hello-world/"/>
+    <id>http://yoursite.com/2020/03/25/hello-world/</id>
+    <published>2020-03-25T15:27:47.105Z</published>
+    <updated>2020-03-25T15:27:47.106Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
