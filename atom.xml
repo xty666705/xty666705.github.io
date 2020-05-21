@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-21T06:56:04.806Z</updated>
+  <updated>2020-05-21T07:12:16.552Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/05/21/%E5%85%B3%E4%BA%8E%E5%9F%9F%E5%90%8D/"/>
     <id>http://yoursite.com/2020/05/21/%E5%85%B3%E4%BA%8E%E5%9F%9F%E5%90%8D/</id>
     <published>2020-05-21T06:18:35.000Z</published>
-    <updated>2020-05-21T06:56:04.806Z</updated>
+    <updated>2020-05-21T07:12:16.552Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>域名（Domain Name），又称网域，是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）。</strong><br><strong>域名是一个网站最重要的虚拟资产，相当于现实生活中的门牌号。</strong></p><p><strong><a id="more"></a></strong></p><p>我是选择在腾讯云购买域名，因为感觉便宜</p><h3 id="一、首先点击腾讯云官网，选择所需购买的"><a href="#一、首先点击腾讯云官网，选择所需购买的" class="headerlink" title="一、首先点击腾讯云官网，选择所需购买的"></a>一、首先点击<a href="https://cloud.tencent.com/act/domainsales?fromSource=gwzcw.2731171.2731171.2731171&utm_medium=cpc&utm_id=gwzcw.2731171.2731171.2731171" target="_blank" rel="noopener">腾讯云官网</a>，选择所需购买的</h3><p><img src="/picture/12.png" alt="12"></p><p>之后注册，完成购买（买的时候正好做活动，只需3块）</p><p><img src="/picture/13.png" alt="13"></p><h3 id="二、完成购买后，等待域名审核"><a href="#二、完成购买后，等待域名审核" class="headerlink" title="二、完成购买后，等待域名审核"></a>二、完成购买后，等待域名审核</h3><p><img src="/picture/14.png" alt="14"></p><h3 id="三、成功之后开始解析"><a href="#三、成功之后开始解析" class="headerlink" title="三、成功之后开始解析"></a>三、成功之后开始解析</h3><p>1、点击右上角控制台</p><p><img src="/picture/15.png" alt="15"></p><p>2、点击域名管理</p><p><img src="/picture/16.png" alt="16"></p><p>3、点击解析</p><p><img src="/picture/17.png" alt="17"></p><p>4、进入解析界面，添加记录，将记录值改成自己的blog仓库值</p><p><img src="/picture/18.png" alt="18"></p><h3 id="四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可"><a href="#四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可" class="headerlink" title="四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可"></a>四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可</h3><p><img src="/picture/19.png" alt="19"></p><p>五、最后，hexo clean、hexo g、hexo d重新部署一下就OK了。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>域名（Domain Name），又称网域，是由一串用点分隔的名字组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识（有时也指地理位置）。</strong><br><strong>域名是一个网站最重要的虚拟资产，相当于现实生活中的门牌号。</strong></p><p><strong><a id="more"></a></strong></p><p>我是选择在腾讯云购买域名，因为感觉便宜</p><h3 id="一、首先点击腾讯云官网，选择所需购买的"><a href="#一、首先点击腾讯云官网，选择所需购买的" class="headerlink" title="一、首先点击腾讯云官网，选择所需购买的"></a>一、首先点击<a href="https://cloud.tencent.com/act/domainsales?fromSource=gwzcw.2731171.2731171.2731171&utm_medium=cpc&utm_id=gwzcw.2731171.2731171.2731171" target="_blank" rel="noopener">腾讯云官网</a>，选择所需购买的</h3><p><img src="/picture/12.png" alt="12"></p><p>之后注册，完成购买（买的时候正好做活动，只需3元）</p><p><img src="/picture/13.png" alt="13"></p><h3 id="二、完成购买后，等待域名审核"><a href="#二、完成购买后，等待域名审核" class="headerlink" title="二、完成购买后，等待域名审核"></a>二、完成购买后，等待域名审核</h3><p><img src="/picture/14.png" alt="14"></p><h3 id="三、成功之后开始解析"><a href="#三、成功之后开始解析" class="headerlink" title="三、成功之后开始解析"></a>三、成功之后开始解析</h3><p>1、点击右上角控制台</p><p><img src="/picture/15.png" alt="15"></p><p>2、点击域名管理</p><p><img src="/picture/16.png" alt="16"></p><p>3、点击解析</p><p><img src="/picture/17.png" alt="17"></p><p>4、进入解析界面，添加记录，将记录值改成自己的blog仓库值</p><p><img src="/picture/18.png" alt="18"></p><h3 id="四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可"><a href="#四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可" class="headerlink" title="四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可"></a>四、解析成功后，打开blog下source文件夹，在里面新建CNAME的文件，将刚刚购买的输入进去即可</h3><p><img src="/picture/19.png" alt="19"></p><h3 id="五、最后，hexo-clean、hexo-g、hexo-d重新部署一下就OK了。"><a href="#五、最后，hexo-clean、hexo-g、hexo-d重新部署一下就OK了。" class="headerlink" title="五、最后，hexo clean、hexo g、hexo d重新部署一下就OK了。"></a>五、最后，hexo clean、hexo g、hexo d重新部署一下就OK了。</h3>]]></content>
     
     <summary type="html">
     
