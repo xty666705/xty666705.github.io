@@ -92,10 +92,9 @@
 <meta property="og:image" content="http://yoursite.com/picture/38.png">
 <meta property="og:image" content="http://yoursite.com/picture/37.png">
 <meta property="og:image" content="http://yoursite.com/picture/39.png">
-<meta property="og:image" content="http://yoursite.com/picture/40.jpg">
 <meta property="og:image" content="http://yoursite.com/picture/40.png">
 <meta property="article:published_time" content="2020-06-16T10:19:23.000Z">
-<meta property="article:modified_time" content="2020-06-16T11:46:55.854Z">
+<meta property="article:modified_time" content="2020-06-16T12:02:49.099Z">
 <meta property="article:author" content="小汤圆">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/picture/35.png">
@@ -370,22 +369,15 @@
 <p><img src="/picture/37.png" alt="37"></p>
 <p>点击<strong>Start Scan</strong>，查找设备</p>
 <p><img src="/picture/39.png" alt="39"></p>
-<p>选择自己BBC设备 ，点击Inspect,板子会显示C</p>
-<p><img src="/picture/40.jpg" alt="40"></p>
-<p>说明电脑端和板子运行正常。</p>
+<p>选择自己BBC设备 ，点击Inspect,板子会显示C就说明电脑端和板子运行正常。</p>
 <h2 id="五、扫描周边设备"><a href="#五、扫描周边设备" class="headerlink" title="五、扫描周边设备"></a>五、扫描周边设备</h2><p>在html中，输入代码，添加入discoverDevices()来扫描周边的设备</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function discoverDevices()</span><br><span class="line">        &#123; </span><br><span class="line">            console.log(&quot;discoverDevices&quot;);</span><br><span class="line">            var options &#x3D; &#123;acceptallDevices:true&#125;       &#x2F;&#x2F;发现所有周边蓝牙设备</span><br><span class="line">           </span><br><span class="line">            navigator.bluetooth.requestDevice(options)</span><br><span class="line">            .then(device &#x3D;&gt; &#123;</span><br><span class="line">                console.log(&#39;&gt; Name:&#39; + device.name);</span><br><span class="line">                console.log(&#39;&gt; Id:&#39; + device.id);</span><br><span class="line">                console.log(&#39;&gt; Connected:&#39; + device.gatt.connected);</span><br><span class="line">                selected_device &#x3D; device;</span><br><span class="line">                console.log(selected_device);</span><br><span class="line">                connect();</span><br><span class="line">                &#125;)</span><br><span class="line">            .catch(error &#x3D;&gt; &#123;</span><br><span class="line">                alert(&#39;ERROR&#39; +error);</span><br><span class="line">                console.log(&#39;ERROR&#39; +error);</span><br><span class="line">                &#125;);       </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <p>在body中加入一个按键，用来点击调用discoverDevices()函数</p>
-<h2>
-            Device Discovery or Disconnect
-        </h2>
-       <h2>
-                Device Discovery or Disconnect
-            </h2>
-            <button id = "btn_scan" onclick="discoverDevices()">Start scan</button>
-
-<p>这样就可以扫描设备</p>
+<pre><code>&lt;h2&gt;
+         Device Discovery or Disconnect
+     &lt;/h2&gt;
+     &lt;button id = &quot;btn_scan&quot; onclick=&quot;discoverDevices()&quot;&gt;Start scan&lt;/button&gt;</code></pre><p>这样就可以扫描设备了</p>
 <p><img src="/picture/40.png" alt="40"></p>
 <h2 id="六、连接蓝牙设备"><a href="#六、连接蓝牙设备" class="headerlink" title="六、连接蓝牙设备"></a>六、连接蓝牙设备</h2><p>在源代码中加入一个connect()函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function connect()</span><br><span class="line">    &#123;</span><br><span class="line">        console.log(&quot;connecting&quot;);</span><br><span class="line">        selected_device.gatt.connect()</span><br><span class="line">        .then(</span><br><span class="line">            function (server)</span><br><span class="line">            &#123;</span><br><span class="line">                console.log(&quot;Connected to&quot; + server.device.id);</span><br><span class="line">                console.log(&quot;Connected &quot; + server.connected);</span><br><span class="line">                selected_device.addEventListener(&#39;gattserverdisconnected&#39;,onDisconnected);</span><br><span class="line">                connected_server &#x3D;server;</span><br><span class="line">                setConnectedStatus(true);</span><br><span class="line">            &#125;,</span><br><span class="line">            function (error)</span><br><span class="line">            &#123;</span><br><span class="line">                console.log(&quot;ERROR:could not connct-&quot; + error);</span><br><span class="line">               alert(&quot;ERROR:could not connct-&quot; + error);</span><br><span class="line">               setConnectedStatus(false);</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -401,7 +393,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function connect()</span><br><span class="line">            &#123;</span><br><span class="line">                console.log(&quot;connecting&quot;);</span><br><span class="line">                selected_device.gatt.connect()</span><br><span class="line">                .then(</span><br><span class="line">                    function(server)                            &#x2F;&#x2F;表示连接成功</span><br><span class="line">                    &#123;</span><br><span class="line">                        console.log(&quot;Connected to&quot; + server.device.id);</span><br><span class="line">                        console.log(&quot;Connected&#x3D;&quot; + server.connected);</span><br><span class="line">                        connected_server &#x3D; server;</span><br><span class="line">                        setConnectedStatus(true);</span><br><span class="line">                          &#125;,</span><br><span class="line">                    function(error)                              &#x2F;&#x2F;表示连接失败</span><br><span class="line">                    &#123;</span><br><span class="line">                        console.log(&quot;ERROR:could not connct-&quot; + error);</span><br><span class="line">                        alert(&quot;ERROR:could not connct-&quot; + error);</span><br><span class="line">                        setConnectedStatus(false);</span><br><span class="line"></span><br><span class="line">                    &#125;</span><br><span class="line">                );</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
 
 <p>总代码如下：</p>
-<pre><code>       &lt;html&gt;
+<pre><code> &lt;html&gt;
     &lt;head&gt;
         &lt;script&gt;
             var selected_device;          
@@ -690,11 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、确认本机是否安装蓝牙"><span class="nav-number">1.1.</span> <span class="nav-text">一、确认本机是否安装蓝牙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、检查本机系统、Chrome浏览器的版本"><span class="nav-number">1.2.</span> <span class="nav-text">二、检查本机系统、Chrome浏览器的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、下载固件至开发板"><span class="nav-number">1.3.</span> <span class="nav-text">三、下载固件至开发板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、测试"><span class="nav-number">1.4.</span> <span class="nav-text">四、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、扫描周边设备"><span class="nav-number">1.5.</span> <span class="nav-text">五、扫描周边设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.6.</span> <span class="nav-text">
-            Device Discovery or Disconnect
-        </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.7.</span> <span class="nav-text">
-                Device Discovery or Disconnect
-            </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、连接蓝牙设备"><span class="nav-number">1.8.</span> <span class="nav-text">六、连接蓝牙设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、连接和断开蓝牙设备"><span class="nav-number">1.9.</span> <span class="nav-text">七、连接和断开蓝牙设备</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、确认本机是否安装蓝牙"><span class="nav-number">1.1.</span> <span class="nav-text">一、确认本机是否安装蓝牙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、检查本机系统、Chrome浏览器的版本"><span class="nav-number">1.2.</span> <span class="nav-text">二、检查本机系统、Chrome浏览器的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、下载固件至开发板"><span class="nav-number">1.3.</span> <span class="nav-text">三、下载固件至开发板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、测试"><span class="nav-number">1.4.</span> <span class="nav-text">四、测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、扫描周边设备"><span class="nav-number">1.5.</span> <span class="nav-text">五、扫描周边设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、连接蓝牙设备"><span class="nav-number">1.6.</span> <span class="nav-text">六、连接蓝牙设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、连接和断开蓝牙设备"><span class="nav-number">1.7.</span> <span class="nav-text">七、连接和断开蓝牙设备</span></a></li></ol></li></ol></div>
             
 
           </div>
